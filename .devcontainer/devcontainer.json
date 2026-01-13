@@ -8,6 +8,18 @@
         "dockerfile": "../docker/pytorch-frc-dev.dockerfile"
     },
 	
+	// Pass GPU access to the container
+    "runArgs": [
+        "--gpus", "all"
+        // ,"--shm-size", "2gb" // Shared memory size, ~30% of system RAM is a good number for deep learning workloads
+    ],
+
+    // Environment variables for NVIDIA drivers
+    "containerEnv": {
+        "NVIDIA_VISIBLE_DEVICES": "all",
+        "NVIDIA_DRIVER_CAPABILITIES": "compute,utility"
+    },
+
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
 
