@@ -1,3 +1,4 @@
 __pycache__
-.json
+triangulation/src/in*.json
+triangulation/src/out*.json
 .zip
